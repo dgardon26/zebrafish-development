@@ -6,7 +6,9 @@
 
 
 
-## Example Published Figure: ![Example of heat map](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-023-06720-2/MediaObjects/41586_2023_6720_Fig5_HTML.png?as=webp)
+## Example Published Figure: 
+![Example of clustering](https://www.cell.com/cms/10.1016/j.cell.2024.09.047/asset/9e7b2f0a-f8bc-40b2-8c7d-1ad72aa5a6cb/main.assets/gr1.jpg)
+![Example of heat map](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-023-06720-2/MediaObjects/41586_2023_6720_Fig5_HTML.png?as=webp)
 
 ## Datasets: 
 
