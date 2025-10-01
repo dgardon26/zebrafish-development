@@ -6,7 +6,7 @@
 
 
 
-## Example Published Figure: ![](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-023-06720-2/MediaObjects/41586_2023_6720_Fig5_HTML.png?as=webp)
+## Example Published Figure: ![Example of heat map](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-023-06720-2/MediaObjects/41586_2023_6720_Fig5_HTML.png?as=webp)
 
 ## Datasets: 
 
