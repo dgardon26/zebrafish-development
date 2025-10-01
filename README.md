@@ -4,6 +4,7 @@
 
 ## Proposal:
 
+We want use the data from Zebrahug to look at expression of groups of major developmental molecules across zebrafish embryo tissues, starting with replicating their tissue clustering to confirm our pipeline works and then examining our molecules of choice from there. Specifically, we were thinking of looking at Hedgehog, Wnt, Notch, TGF-B, Hox and/or FGF, all major developmental pathways. Additionally, we may do a timepoint comparison of one gene across one tissue, and expand a timepoint across tissues if time permits and one is highly expressed, or compare results between datasets.
 
 
 ## Example Published Figure: 
