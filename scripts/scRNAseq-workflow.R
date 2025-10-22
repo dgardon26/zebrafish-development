@@ -1,7 +1,7 @@
 if (!requireNamespace("BiocManager", quietly=TRUE)) {
   install.packages("BiocManager")
 }
-setwd("~/zebrafish-development/data/TDR67")
+setwd("~/zebrafish-development/data/TDR70")
 
 BiocManager::install(c('scuttle', 'scran', 'scater', 'uwot', 'rtracklayer', 'scRNAseq', 'monocle', 'Seurat'))
 
@@ -12,12 +12,13 @@ library(scater)
 library(scran)
 library(scRNAseq)
 library(monocle)
+library(fs)
 
 install.packages("hdf5r")
 
 # Create a Seurat object
 
-test <- Read10X_h5("~/zebrafish-development/data/TDR67/filtered_feature_bc_matrix.h5")
+test <- Read10X_h5("~/zebrafish-development/data/TDR70/filtered_feature_bc_matrix.h5")
 data <- CreateSeuratObject(counts = test)
 data.updated = UpdateSeuratObject(object = data)
 data_counts <- as.matrix(data.updated@assays$RNA@layers$counts)
@@ -60,4 +61,12 @@ data <- RunUMAP(data, dims = 1:10)
 
 # Step 8: Plot the UMAP results
 # This visualization shows the clusters identified by Seurat, each in a different color.
-DimPlot(data, reduction = "umap")
+UMAP_70 <- DimPlot(data, reduction = "umap")
+
+ggsave("UMAP_70.png", plot = UMAP_70)
+
+file_move("~/zebrafish-development/data/TDR70/UMAP_70.png", "~/zebrafish-development/UMAP")
+
+
+
+
