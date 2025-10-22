@@ -3,16 +3,17 @@ if (!requireNamespace("BiocManager", quietly=TRUE)) {
 }
 setwd("~/zebrafish-development/data/TDR67")
 
-BiocManager::install(c('scuttle', 'scran', 'scater', 'uwot', 'rtracklayer', 'scRNAseq', 'monacle', 'Seurat'))
+BiocManager::install(c('scuttle', 'scran', 'scater', 'uwot', 'rtracklayer', 'scRNAseq', 'monocle', 'Seurat'))
 
 # Load packages
 library(Seurat)
-library(SeuratData)
 library(SingleCellExperiment)
 library(scater)
 library(scran)
 library(scRNAseq)
 library(monocle)
+
+install.packages("hdf5r")
 
 # Create a Seurat object
 
