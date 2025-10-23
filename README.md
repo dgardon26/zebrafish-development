@@ -21,14 +21,23 @@ Secondary Dataset (for stretch goals) https://www.nature.com/articles/s41586-023
 ## Software/Tools:
 
 R, version 4.5.1, https://posit.co/download/rstudio-desktop/
+
 Bioconductor, version 1.18.0, https://bioconductor.org/books/release/OSCA/
+
 Seurat, version 5, https://satijalab.org/seurat/
-SingleCellExperiment, version 1.30.1 https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html
+
+SingleCellExperiment, version 1.30.1, https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html
+
 scater, version 1.36.0, https://www.bioconductor.org/packages/release/bioc/html/scater.html
+
 scran, version 1.36.0, https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html
+
 scuttle, version 1.18.0, https://bioconductor.org/packages/release/bioc/html/scuttle.html
+
 uwot, version 0.2.3, https://cran.r-project.org/web/packages/uwot/index.html
+
 monocle, version 2.36.0, https://www.bioconductor.org/packages/release/bioc/html/monocle.html
+
 scRNAseq, version 2.22.0, https://www.bioconductor.org/packages/release/data/experiment/html/scRNAseq.html
 
 Potential Additional Tools:
