@@ -1,6 +1,4 @@
-# zebrafish-development
-
-## Title: Transcriptomic Cross Tissue Analysis of Key Developmental Genes in Zebrafish
+## Title: Transcriptomic Cross-Tissue Analysis of Key Developmental Genes in Zebrafish
 
 ## Proposal:
 
@@ -13,13 +11,24 @@ We want use the data from Zebrahug to look at expression of groups of major deve
 
 ## Datasets: 
 
-Primary Dataset https://www.cell.com/cell/fulltext/S0092-8674(24)01147-4#fig1 
+Primary Dataset https://zebrahub.sf.czbiohub.org/data ->
+https://drive.google.com/drive/folders/1WQNr8RkiUqxm6m_SAIXKedPXBxhZ6FWu
+Looking at h5 count matrices of 4 zebrafish samples at 3 days post fertilization (3dpf). Samples TDR67 - TDR70.
+
 
 Secondary Dataset (for stretch goals) https://www.nature.com/articles/s41586-023-06720-2 
 
 ## Software/Tools:
 
 Bioconductor, version 1.18.0, https://bioconductor.org/books/release/OSCA/
+  Seurat
+  SingleCellExperiment
+  scater
+  scran
+  scuttle
+  uwot
+  monocle
+  scRNAseq
 
 Potential Additional Tools:
 https://github.com/chanzuckerberg/cellxgene 
