@@ -2,7 +2,7 @@
 
 ## Proposal:
 
-We want use the data from Zebrahug to look at expression of groups of major developmental molecules across zebrafish embryo tissues, starting with replicating their tissue clustering to confirm our pipeline works and then examining our molecules of choice from there. Specifically, we were thinking of looking at Hedgehog, Wnt, Notch, TGF-B, Hox and/or FGF, all major developmental pathways. Additionally, we may do a timepoint comparison of one gene across one tissue, and expand a timepoint across tissues if time permits and one is highly expressed, or compare results between datasets.
+We will use scRNA-seq data from Zebrahub to look at expression of groups of major developmental molecules across zebrafish embryo tissues, starting with replicating their tissue clustering to confirm our pipeline works and then examining our molecules of choice from there. Specifically, we were thinking of looking at Hedgehog, Wnt, Notch, TGF-B, Hox and/or FGF, all major developmental pathways. Additionally, we may do a timepoint comparison of one gene across one tissue, and expand a timepoint across tissues if time permits and one is highly expressed, or compare results between datasets.
 
 
 ## Example Published Figure: 
@@ -20,15 +20,16 @@ Secondary Dataset (for stretch goals) https://www.nature.com/articles/s41586-023
 
 ## Software/Tools:
 
+R, version 4.5.1, https://posit.co/download/rstudio-desktop/
 Bioconductor, version 1.18.0, https://bioconductor.org/books/release/OSCA/
-  Seurat
-  SingleCellExperiment
-  scater
-  scran
-  scuttle
-  uwot
-  monocle
-  scRNAseq
+Seurat, version 5, https://satijalab.org/seurat/
+SingleCellExperiment, version 1.30.1 https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html
+scater, version 1.36.0, https://www.bioconductor.org/packages/release/bioc/html/scater.html
+scran, version 1.36.0, https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html
+scuttle, version 1.18.0, https://bioconductor.org/packages/release/bioc/html/scuttle.html
+uwot, version 0.2.3, https://cran.r-project.org/web/packages/uwot/index.html
+monocle, version 2.36.0, https://www.bioconductor.org/packages/release/bioc/html/monocle.html
+scRNAseq, version 2.22.0, https://www.bioconductor.org/packages/release/data/experiment/html/scRNAseq.html
 
 Potential Additional Tools:
 https://github.com/chanzuckerberg/cellxgene 
