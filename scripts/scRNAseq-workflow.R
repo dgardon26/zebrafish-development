@@ -6,6 +6,7 @@ setwd("~/zebrafish-development/data/TDR70")
 BiocManager::install(c('scuttle', 'scran', 'scater', 'uwot', 'rtracklayer', 'scRNAseq', 'monocle', 'Seurat'))
 
 # Load packages
+library(dplyr)
 library(Seurat)
 library(SingleCellExperiment)
 library(scater)
@@ -65,8 +66,30 @@ UMAP_70 <- DimPlot(data, reduction = "umap")
 
 ggsave("UMAP_70.png", plot = UMAP_70)
 
+#repeat for each umap file, we started with samples 67-70.
+
 file_move("~/zebrafish-development/data/TDR70/UMAP_70.png", "~/zebrafish-development/UMAP")
 
+#repeat for each umap file, we started with samples 67-70, just change the number in each step.
 
 
+##Next step: characterize clusters by enriched gene markers
+data.markers <- FindAllMarkers(data, only.pos = TRUE)
+data.markers %>%
+  group_by(cluster) %>%
+  dplyr::filter(avg_log2FC > 1)
 
+#compare feature# by gene# in gene_names list -> look for biomarkers in each tissue in literature and in zebrafish website
+install.packages('devtools')
+devtools::install_github('immunogenomics/presto')
+
+gene_names <- data.updated@assays$RNA@features
+gene_names <- as.data.frame(rownames(gene_names))
+gene_names$feature <- paste0("Feature", seq(1, nrow(gene_names)))
+gene_names <- merge(gene_names, data.markers, by.x = "feature", by.y = "gene", all.x = TRUE)
+data.markers <- merge(data.markers, gene_names, by.x = "gene", by.y = "feature", all.x = TRUE)
+data.markers %>%
+  group_by(cluster) %>%
+  dplyr::filter(avg_log2FC > 1)
+
+gene_names <- as_tibble(gene_names)
