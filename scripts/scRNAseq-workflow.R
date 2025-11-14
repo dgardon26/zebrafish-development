@@ -74,7 +74,7 @@ file_move("~/zebrafish-development/data/TDR70/UMAP_70.png", "~/zebrafish-develop
 
 
 ##Next step: characterize clusters by enriched gene markers
-data.markers <- FindAllMarkers(data, only.pos = TRUE)
+data.markers <- FindAllMarkers(data, test.use = "roc", only.pos = TRUE)
 data.markers %>%
   group_by(cluster) %>%
   dplyr::filter(avg_log2FC > 1)
@@ -93,3 +93,47 @@ data.markers %>%
   dplyr::filter(avg_log2FC > 1)
 
 gene_names <- as_tibble(gene_names)
+
+data.markers %>%
+  slice_head(n = 20) %>%
+  ungroup() -> top20
+DoHeatmap(data, features = top10$gene) + NoLegend()
+specific_gene <- gene_names %>% filter(grepl("Feature7096", feature))
+print(specific_gene)
+
+
+data_test.markers <- FindAllMarkers(data, only.pos = TRUE)
+data_test.markers %>%
+  group_by(cluster) %>%
+  dplyr::filter(avg_log2FC > 1)
+
+data_test.markers <- filter(data_test.markers, p_val_adj < 0.05)
+data_test.markers <- filter(data_test.markers, avg_log2FC > 2)
+cluster1.markers <- filter(data.markers, cluster == 1) # Feature7096 elavl3
+cluster2.markers <- filter(data.markers, cluster == 2) # Feature25709 col5a1
+cluster3.markers <- filter(data.markers, cluster == 3) # Feature29076 syt5b
+cluster4.markers <- filter(data.markers, cluster == 4) # Feature7240 hbbe1.3
+cluster5.markers <- filter(data.markers, cluster == 5) # Feature17099 fabp7a
+cluster6.markers <- filter(data.markers, cluster == 6) # Feature22116 rplp1, this is a pretty weak marker though
+cluster7.markers <- filter(data.markers, cluster == 7) # Feature8239 krt4
+cluster8.markers <- filter(data.markers, cluster == 8) # Feature25460 pfn1
+cluster9.markers <- filter(data.markers, cluster == 9) # Feature21113 gngt2b
+cluster10.markers <- filter(data.markers, cluster == 10) # Feature7242 hbae3
+cluster11.markers <- filter(data.markers, cluster == 11) # Feature16779 actc1b
+cluster12.markers <- filter(data.markers, cluster == 12) # Feature20205 CR318588.4 this one is not amazing
+cluster13.markers <- filter(data.markers, cluster == 13) # Feature17099 fabp7a
+cluster14.markers <- filter(data.markers, cluster == 14) # Feature23221 apoa1b
+cluster15.markers <- filter(data.markers, cluster == 15) # Feature7452 lgals2b
+cluster16.markers <- filter(data.markers, cluster == 16) # Feature13536 prss59.2
+cluster17.markers <- filter(data.markers, cluster == 17) # Feature6386 col1a1a
+cluster18.markers <- filter(data.markers, cluster == 18) # Feature12614 atp1a1b
+cluster19.markers <- filter(data.markers, cluster == 19) # Feature3603 cdh5
+cluster20.markers <- filter(data.markers, cluster == 20) # Feature28325 and3
+cluster21.markers <- filter(data.markers, cluster == 21) # Feature13327 abcb5
+cluster22.markers <- filter(data.markers, cluster == 22) # Feature25002 si:dkey-205h13.2 
+
+
+
+FeaturePlot(data, features = c("Feature7096"))
+
+            
