@@ -74,6 +74,7 @@ file_move("~/zebrafish-development/data/TDR70/UMAP_70.png", "~/zebrafish-develop
 
 
 ##Next step: characterize clusters by enriched gene markers
+data.markers <- FindAllMarkers(data, only.pos = TRUE)
 data.markers <- FindAllMarkers(data, test.use = "roc", only.pos = TRUE)
 data.markers %>%
   group_by(cluster) %>%
@@ -86,17 +87,14 @@ devtools::install_github('immunogenomics/presto')
 gene_names <- data.updated@assays$RNA@features
 gene_names <- as.data.frame(rownames(gene_names))
 gene_names$feature <- paste0("Feature", seq(1, nrow(gene_names)))
-gene_names <- merge(gene_names, data.markers, by.x = "feature", by.y = "gene", all.x = TRUE)
-data.markers <- merge(data.markers, gene_names, by.x = "gene", by.y = "feature", all.x = TRUE)
-data.markers %>%
-  group_by(cluster) %>%
-  dplyr::filter(avg_log2FC > 1)
 
 gene_names <- as_tibble(gene_names)
 
 data.markers %>%
-  slice_head(n = 20) %>%
-  ungroup() -> top20
+  group_by(cluster) %>%
+  dplyr::filter(avg_log2FC > 1) %>%
+  slice_head(n = 10) %>%
+  ungroup() -> top10
 DoHeatmap(data, features = top10$gene) + NoLegend()
 specific_gene <- gene_names %>% filter(grepl("Feature7096", feature))
 print(specific_gene)
