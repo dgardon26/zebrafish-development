@@ -97,8 +97,23 @@ data.markers %>%
   ungroup() -> top10
 DoHeatmap(data, features = top10$gene) + NoLegend()
 specific_gene <- gene_names %>% filter(grepl("Feature7096", feature))
-print(specific_gene)
-
+print(specific_gene) # Feature3539
+shha_feature <- gene_names %>% filter(`rownames(gene_names)` == "shha") %>% pull(feature)
+print(shha_feature)
+wnt1_feature <- gene_names %>% filter(`rownames(gene_names)` == "wnt1") %>% pull(feature)
+print(wnt1_feature) # Feature25030
+notch1a_feature <- gene_names %>% filter(`rownames(gene_names)` == "notch1a") %>% pull(feature)
+print(notch1a_feature) # Feature25656
+tgfb1a_feature <- gene_names %>% filter(`rownames(gene_names)` == "tgfb1a") %>% pull(feature)
+print(tgfb1a_feature) # Feature23350
+hoxb2a_feature <- gene_names %>% filter(`rownames(gene_names)` == "hoxb2a") %>% pull(feature)
+print(hoxb2a_feature) # Feature6413
+hoxb1b_feature <- gene_names %>% filter(`rownames(gene_names)` == "hoxb1b") %>% pull(feature)
+print(hoxb1b_feature) # Feature21631
+fgf1a_feature <- gene_names %>% filter(`rownames(gene_names)` == "fgf1a") %>% pull(feature)
+print(fgf1a_feature) # Feature18373
+fgfr2_feature <- gene_names %>% filter(`rownames(gene_names)` == "fgfr2") %>% pull(feature)
+print(fgfr2_feature) # Feature19918
 
 data_test.markers <- FindAllMarkers(data, only.pos = TRUE)
 data_test.markers %>%
@@ -117,21 +132,31 @@ cluster7.markers <- filter(data.markers, cluster == 7) # Feature8239 krt4
 cluster8.markers <- filter(data.markers, cluster == 8) # Feature25460 pfn1
 cluster9.markers <- filter(data.markers, cluster == 9) # Feature21113 gngt2b
 cluster10.markers <- filter(data.markers, cluster == 10) # Feature7242 hbae3
-cluster11.markers <- filter(data.markers, cluster == 11) # Feature16779 actc1b
+cluster11.markers <- filter(data.markers, cluster == 11) # Feature16779 actc1b 
 cluster12.markers <- filter(data.markers, cluster == 12) # Feature20205 CR318588.4 this one is not amazing
 cluster13.markers <- filter(data.markers, cluster == 13) # Feature17099 fabp7a
-cluster14.markers <- filter(data.markers, cluster == 14) # Feature23221 apoa1b
-cluster15.markers <- filter(data.markers, cluster == 15) # Feature7452 lgals2b
+cluster14.markers <- filter(data.markers, cluster == 14) # Feature23221 apoa1b 
+cluster15.markers <- filter(data.markers, cluster == 15) # Feature7452 lgals2b 
 cluster16.markers <- filter(data.markers, cluster == 16) # Feature13536 prss59.2
 cluster17.markers <- filter(data.markers, cluster == 17) # Feature6386 col1a1a
 cluster18.markers <- filter(data.markers, cluster == 18) # Feature12614 atp1a1b
-cluster19.markers <- filter(data.markers, cluster == 19) # Feature3603 cdh5
-cluster20.markers <- filter(data.markers, cluster == 20) # Feature28325 and3
+cluster19.markers <- filter(data.markers, cluster == 19) # Feature3603 cdh5 
+cluster20.markers <- filter(data.markers, cluster == 20) # Feature28325 and3 
 cluster21.markers <- filter(data.markers, cluster == 21) # Feature13327 abcb5
-cluster22.markers <- filter(data.markers, cluster == 22) # Feature25002 si:dkey-205h13.2 
-
+cluster22.markers <- filter(data.markers, cluster == 22) # Feature25002 si:dkey-205h13.2
 
 
 FeaturePlot(data, features = c("Feature7096"))
+FeaturePlot(data, features = c("Feature3539")) # 5? pretty scattered though
+VlnPlot(data, features = c("Feature3539"), log = TRUE)
+FeaturePlot(data, features = c("Feature25030")) # 1, 4, 12?
+FeaturePlot(data, features = c("Feature25656")) # 5, 6, 18?  
+FeaturePlot(data, features = c("Feature23350")) # around cluster 2
+FeaturePlot(data, features = c("Feature6413")) # 2 with a scattering throughout
+FeaturePlot(data, features = c("Feature21631")) # seems scattered
+FeaturePlot(data, features = c("Feature18373"))
+FeaturePlot(data, features = c("Feature19918")) # Interesting? clustering around 2/0 and 5/6 ish, though very scattered
 
-            
+
+
+
