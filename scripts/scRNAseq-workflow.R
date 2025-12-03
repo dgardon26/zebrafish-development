@@ -163,4 +163,30 @@ marker_genes <- reference_markers2 %>% select(annotation_human_readable, `marker
 #cluster 20 fin basal cell // epidermis
 #cluster 21 periderm // integument
 
+shha_feature <- gene_names %>% filter(`rownames(gene_names)` == "shha") %>% pull(feature)
+print(shha_feature)
+wnt1_feature <- gene_names %>% filter(`rownames(gene_names)` == "wnt1") %>% pull(feature)
+print(wnt1_feature) # Feature25030
+notch1a_feature <- gene_names %>% filter(`rownames(gene_names)` == "notch1a") %>% pull(feature)
+print(notch1a_feature) # Feature25656
+tgfb1a_feature <- gene_names %>% filter(`rownames(gene_names)` == "tgfb1a") %>% pull(feature)
+print(tgfb1a_feature) # Feature23350
+hoxb2a_feature <- gene_names %>% filter(`rownames(gene_names)` == "hoxb2a") %>% pull(feature)
+print(hoxb2a_feature) # Feature6413
+hoxb1b_feature <- gene_names %>% filter(`rownames(gene_names)` == "hoxb1b") %>% pull(feature)
+print(hoxb1b_feature) # Feature21631
+fgf1a_feature <- gene_names %>% filter(`rownames(gene_names)` == "fgf1a") %>% pull(feature)
+print(fgf1a_feature) # Feature18373
+fgfr2_feature <- gene_names %>% filter(`rownames(gene_names)` == "fgfr2") %>% pull(feature)
+print(fgfr2_feature) # Feature19918
+
+FeaturePlot(data, features = c("Feature3539")) # 5? pretty scattered though
+VlnPlot(data, features = c("Feature3539"), log = TRUE)
+FeaturePlot(data, features = c("Feature25030")) # 1, 4, 12?
+FeaturePlot(data, features = c("Feature25656")) # 5, 6, 18?  
+FeaturePlot(data, features = c("Feature23350")) # around cluster 2
+FeaturePlot(data, features = c("Feature6413")) # 2 with a scattering throughout
+FeaturePlot(data, features = c("Feature21631")) # seems scattered
+FeaturePlot(data, features = c("Feature18373"))
+FeaturePlot(data, features = c("Feature19918")) # Interesting? clustering around 2/0 and 5/6 ish, though very scattered
 
