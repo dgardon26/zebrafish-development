@@ -75,7 +75,6 @@ file_move("~/zebrafish-development/data/TDR70/UMAP_70.png", "~/zebrafish-develop
 
 ##Next step: characterize clusters by enriched gene markers
 data.markers <- FindAllMarkers(data, only.pos = TRUE)
-data.markers <- FindAllMarkers(data, test.use = "roc", only.pos = TRUE)
 data.markers %>%
   group_by(cluster) %>%
   dplyr::filter(avg_log2FC > 1)
@@ -120,9 +119,9 @@ data_test.markers %>%
   group_by(cluster) %>%
   dplyr::filter(avg_log2FC > 1)
 
-data_test.markers <- filter(data_test.markers, p_val_adj < 0.05)
+data_test.markers <- filter(data.markers, p_val_adj < 0.05)
 data_test.markers <- filter(data_test.markers, avg_log2FC > 2)
-cluster1.markers <- filter(data.markers, cluster == 1) # Feature7096 elavl3
+cluster1.markers <- filter(data_test.markers, cluster == 1) # Feature7096 elavl3
 cluster2.markers <- filter(data.markers, cluster == 2) # Feature25709 col5a1
 cluster3.markers <- filter(data.markers, cluster == 3) # Feature29076 syt5b
 cluster4.markers <- filter(data.markers, cluster == 4) # Feature7240 hbbe1.3
@@ -145,18 +144,23 @@ cluster20.markers <- filter(data.markers, cluster == 20) # Feature28325 and3
 cluster21.markers <- filter(data.markers, cluster == 21) # Feature13327 abcb5
 cluster22.markers <- filter(data.markers, cluster == 22) # Feature25002 si:dkey-205h13.2
 
+top10_test <- left_join(top10, gene_names, by = c("gene" = "feature")) 
+top10_test <- top10_test %>% select(-gene) #use this
 
-FeaturePlot(data, features = c("Feature7096"))
-FeaturePlot(data, features = c("Feature3539")) # 5? pretty scattered though
-VlnPlot(data, features = c("Feature3539"), log = TRUE)
-FeaturePlot(data, features = c("Feature25030")) # 1, 4, 12?
-FeaturePlot(data, features = c("Feature25656")) # 5, 6, 18?  
-FeaturePlot(data, features = c("Feature23350")) # around cluster 2
-FeaturePlot(data, features = c("Feature6413")) # 2 with a scattering throughout
-FeaturePlot(data, features = c("Feature21631")) # seems scattered
-FeaturePlot(data, features = c("Feature18373"))
-FeaturePlot(data, features = c("Feature19918")) # Interesting? clustering around 2/0 and 5/6 ish, though very scattered
+FeaturePlot(data, features = c("Feature25709"))
 
+library(readxl)
+reference_markers <- read_excel("~/Downloads/1-s2.0-S0012160619304919-mmc7.xlsx")
+reference_markers2 <- read_excel("~/Downloads/mmc2.xlsx") %>% filter(timepoint == "3dpf")
+marker_genes <- reference_markers2 %>% select(annotation_human_readable, `marker genes`)
 
+#what i found so far? just based on manual comparisons between the marker sets and ours
+#cluster 2 cranial neural crest
+#cluster 3 CNS - neuron
+#cluster 5 CNS - neuron // radial glia
+#cluster 15 intestine
+#cluster 10 blood
+#cluster 20 fin basal cell // epidermis
+#cluster 21 periderm // integument
 
 
