@@ -1,5 +1,4 @@
 
-Insert Feature Plot or Heat Map
 
 # Cluster 1
 elavl3, nervous system, nervous plate, neural tube, neuronal stem cell
@@ -45,3 +44,15 @@ and3, median fin fold
 abcb5, EVL, integeument, liver, periderm
 # Cluster 22
 si:dkey-205h13.2, lateral line ganglion and neuromast
+
+# Key Developmental Genes
+
+shha - 5, pretty scattered though
+wnt1 - 1, 4, 12
+notch1a - 5, 6, 18?  
+tgf1ba - around cluster 2
+hoxb2a - 2 with a scattering throughout
+hoxb1b - seems scattered
+fgf1a - very few cells
+fgfr2 - Interesting clustering around 2/0 and 5/6 ish, though very scattered
+
