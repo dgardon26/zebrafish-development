@@ -1,7 +1,7 @@
 if (!requireNamespace("BiocManager", quietly=TRUE)) {
   install.packages("BiocManager")
 }
-setwd("~/zebrafish-development/data/TDR70")
+setwd("~/zebrafish-development/data/TDR67")
 
 BiocManager::install(c('scuttle', 'scran', 'scater', 'uwot', 'rtracklayer', 'scRNAseq', 'monocle', 'Seurat'))
 
@@ -19,7 +19,7 @@ install.packages("hdf5r")
 
 # Create a Seurat object
 
-test <- Read10X_h5("~/zebrafish-development/data/TDR70/filtered_feature_bc_matrix.h5")
+test <- Read10X_h5("~/zebrafish-development/data/TDR67/filtered_feature_bc_matrix.h5")
 data <- CreateSeuratObject(counts = test)
 data.updated = UpdateSeuratObject(object = data)
 data_counts <- as.matrix(data.updated@assays$RNA@layers$counts)
@@ -62,13 +62,13 @@ data <- RunUMAP(data, dims = 1:10)
 
 # Step 8: Plot the UMAP results
 # This visualization shows the clusters identified by Seurat, each in a different color.
-UMAP_70 <- DimPlot(data, reduction = "umap")
+UMAP_67 <- DimPlot(data, reduction = "umap")
 
-ggsave("UMAP_70.png", plot = UMAP_70)
+ggsave("UMAP_67.png", plot = UMAP_67)
 
 #repeat for each umap file, we started with samples 67-70.
 
-file_move("~/zebrafish-development/data/TDR70/UMAP_70.png", "~/zebrafish-development/UMAP")
+file_move("~/zebrafish-development/data/TDR67/UMAP_67.png", "~/zebrafish-development/UMAP")
 
 #repeat for each umap file, we started with samples 67-70, just change the number in each step.
 
@@ -96,9 +96,9 @@ data.markers %>%
   ungroup() -> top10
 DoHeatmap(data, features = top10$gene) + NoLegend()
 specific_gene <- gene_names %>% filter(grepl("Feature7096", feature))
-print(specific_gene) # Feature3539
+print(specific_gene) 
 shha_feature <- gene_names %>% filter(`rownames(gene_names)` == "shha") %>% pull(feature)
-print(shha_feature)
+print(shha_feature) # Feature3539
 wnt1_feature <- gene_names %>% filter(`rownames(gene_names)` == "wnt1") %>% pull(feature)
 print(wnt1_feature) # Feature25030
 notch1a_feature <- gene_names %>% filter(`rownames(gene_names)` == "notch1a") %>% pull(feature)
@@ -164,7 +164,7 @@ marker_genes <- reference_markers2 %>% select(annotation_human_readable, `marker
 #cluster 21 periderm // integument
 
 shha_feature <- gene_names %>% filter(`rownames(gene_names)` == "shha") %>% pull(feature)
-print(shha_feature)
+print(shha_feature) # Feature3539
 wnt1_feature <- gene_names %>% filter(`rownames(gene_names)` == "wnt1") %>% pull(feature)
 print(wnt1_feature) # Feature25030
 notch1a_feature <- gene_names %>% filter(`rownames(gene_names)` == "notch1a") %>% pull(feature)
