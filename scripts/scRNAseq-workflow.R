@@ -188,5 +188,5 @@ FeaturePlot(data, features = c("Feature23350")) # around cluster 2
 FeaturePlot(data, features = c("Feature6413")) # 2 with a scattering throughout
 FeaturePlot(data, features = c("Feature21631")) # seems scattered
 FeaturePlot(data, features = c("Feature18373"))
-FeaturePlot(data, features = c("Feature19918")) # Interesting? clustering around 2/0 and 5/6 ish, though very scattered
+FeaturePlot(data, features = c("Feature19918"), label = TRUE) # Interesting? clustering around 2/0 and 5/6 ish, though very scattered
 
