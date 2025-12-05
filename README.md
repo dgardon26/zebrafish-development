@@ -46,8 +46,49 @@ https://github.com/czbiohub-sf/zebrahub_analysis
 
 ## Goals: 
 
-1) Pick one gene and do a cross sectional tissue comparison within an embryonic zebrafish dataset. Represent this with clustering and a heat map. From there could compare multiple genes of interest.
+1) Pick one gene and do a cross-sectional tissue comparison within an embryonic zebrafish dataset. Represent this with clustering and a heat map. From there could compare multiple genes of interest.
 
 2) (Stretch) Do a timepoint comparison of a gene within a tissue set and potentially expand at a certain timepoint across tissues if gene is of interest (highly expressed).
 
-3) (Strech-Strech) Use another zebrafish data set and compare results between data sets.
+3) (Stretch-Stretch) Use another zebrafish data set and compare results between data sets.
+
+## Target Genes:
+### Notch Signalling
+Notch1a - notch receptor 1a\
+Notch1b - notch receptor 1b\
+Notch2 - notch receptor 2\
+Notch3 - notch receptor 3\
+dla - deltaA\
+dlb - deltaB\
+jag1a - jagged canonical Notch ligand 1a\
+jag1b - jagged canonical Notch ligand 1b\
+jag2a - jagged canonical Notch ligand 2a\
+jag2b - jagged canonical Notch ligand 2b\
+jag3 - jagged canonical Notch ligand 3\
+
+### BMP Signaling
+bmpr1aa	- bone morphogenetic protein receptor, type IAa\
+bmpr1ab	-	bone morphogenetic protein receptor, type IAb\
+bmpr1ba	-	bone morphogenetic protein receptor, type IBa\
+bmpr1bb	-	bone morphogenetic protein receptor, type IBb\
+bmp1l	- tolloid	bone morphogenetic protein 1, like\
+bmp10l	-	bone morphogenetic protein 10, like\
+bmp10	-	bone morphogenetic protein 10\
+bmp2a	-	bone morphogenetic protein 2a\
+bmp2b	-	bone morphogenetic protein 2b\
+bmp4	-	bone morphogenetic protein 4\
+bmp5	-	bone morphogenetic protein 5\
+bmp7a	-	bone morphogenetic protein 7a\
+bmp8a	-	bone morphogenetic protein 8a\
+brinp3a.1	-	bone morphogenetic protein/retinoic acid inducible neural-specific 3a, tandem duplicate 1\
+brinp3a.2	-	bone morphogenetic protein/retinoic acid inducible neural-specific 3a, tandem duplicate 2\
+brinp3b	-	bone morphogenetic protein/retinoic acid inducible neural-specific 3b\
+brinp2	-	bone morphogenetic protein/retinoic acid inducible neural-specific 2\
+bmp15	-	bone morphogenetic protein 15\
+bmp1a	-	bone morphogenetic protein 1a\
+bmp3	-	bone morphogenetic protein 3\
+bmp6	-	bone morphogenetic protein 6\
+bmp7b	-	bone morphogenetic protein 7b\
+brinp1	-	bone morphogenetic protein/retinoic acid inducible neural-specific 1\
+
+### Others: FGF, Wnt, Shh
