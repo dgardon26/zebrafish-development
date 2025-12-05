@@ -47,33 +47,52 @@ crx, atp1a3a, vsx1, ppp1r1b
 retinal, differentiating neuron
 
 # Cluster 8
-### Marker Genes:
+### Marker Genes: 
+rfx4, npas1, notch3
 ### Putative Identity:
+radial glia, hindbrain neuroblast, general CNS
+
 # Cluster 9
 ### Marker Genes:
+sh2d4ba, zgc:171927, tmc2a, onecut1, stmn1b
 ### Putative Identity:
+Hair cell, differentiated neuron
 
 # Cluster 10
 N/A
-# Cluster 11 
-N/A
+# Cluster 11
+### Marker Genes:
+elovl4b, tulp1a, tmx3a, zgc:109965
+### Putative Identity: 
+differentiating retinal cells
 
 # Cluster 12
 ### Marker Genes:
+fcer1gl, coro1a
 ### Putative Identity:
+neutrophils
 # Cluster 13
-### Marker Genes:
+### Marker Genes: 
+pah, qdpra, c1qtnf5, hapln1b, ptx3a
 ### Putative Identity:
+pectoral fin bud
+
 # Cluster 14
 N/A
 # Cluster 15
 ### Marker Genes:
+ampd1, klhl41b
 ### Putative Identity:
+muscle cell
+
 # Cluster 16
 ### Marker Genes:
+c6ast4, sycn.3, endou
 ### Putative Identity:
 Pancreas
 # Cluster 17
 ### Marker Genes:
+tie1, clec14a, pecam1
 ### Putative Identity:
+blood vessel // vasculature
 
