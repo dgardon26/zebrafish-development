@@ -1,5 +1,6 @@
 ## Title: Transcriptomic Cross-Tissue Analysis of Key Developmental Genes in Zebrafish
-
+## Final Presentation:
+https://docs.google.com/presentation/d/1l9SEgHpo86bpEg8PyyjzmLjY_CFPt_hvNTlyZ1j8_5U/edit?usp=drive_link
 ## Proposal:
 
 We will use scRNA-seq data from Zebrahub to look at expression of groups of major developmental molecules across zebrafish embryo tissues, starting with replicating their tissue clustering to confirm our pipeline works and then examining our molecules of choice from there. Specifically, we were thinking of looking at Hedgehog, Wnt, Notch, TGF-B, Hox and/or FGF, all major developmental pathways. Additionally, we may do a timepoint comparison of one gene across one tissue, and expand a timepoint across tissues if time permits and one is highly expressed, or compare results between datasets.
